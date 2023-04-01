@@ -5,6 +5,16 @@ __pycache__/
 
 # C extensions
 *.so
+ 
+# .vscode
+.vscode
+
+#API Keys
+botConfig.py
+
+#data
+*.json
+*.webm
 
 # Distribution / packaging
 .Python
