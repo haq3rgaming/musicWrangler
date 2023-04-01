@@ -44,13 +44,12 @@ async def stats(interaction):
         memberCount = len(set(wrangler.get_all_members()))
         fileSize = round(get_size(r".\ytData") / 1040400, 2)
         fileCount = len(os.listdir(r".\ytData"))
-        databaseSize = round(get_size(r".\database") / 1024, 2)
         timeSinceStart = time.strftime('%H:%M:%S', time.gmtime(time.time() - wrangler.startTime))
         botRunningSince = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(wrangler.startTime))
         embed = discord.Embed(title="Bot stats", color=0x00ff00)
         embed.add_field(name="Bot info:", value=f"Bot uptime: {timeSinceStart} seconds\nBot running since: {botRunningSince}\nBot latency: {round(wrangler.latency * 1000)} ms", inline=False)
         embed.add_field(name="Server info:", value=f"Server count: {serverCount}\nTotal members: {memberCount}", inline=False)
-        embed.add_field(name="File system:", value=f"Music file count: {fileCount}\nTotal music file size: {fileSize} MB\nDatabase size: {databaseSize} kB", inline=False)
+        embed.add_field(name="File system:", value=f"Music file count: {fileCount}\nTotal music file size: {fileSize} MB", inline=False)
         await interaction.channel.send(embed=embed)
     else: pass
 
